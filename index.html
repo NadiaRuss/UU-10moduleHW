@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <img src="/img/logo.svg" alt="logo" />
+      </div>
+      <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="#">home</a></li>
+          <li><a href="#">shop</a></li>
+          <li><a href="#">our story</a></li>
+          <li><a href="#">blog</a></li>
+          <li><a href="#">contact us</a></li>
+        </ul>
+      </nav>
+      <div class="user-interaction">
+        <div class="icons">
+          <img src="/img/search.svg" alt="search icon" />
+          <img src="/img/heart.svg" alt="heart icon" />
+          <img src="/img/bag.svg" alt="bag icon" />
+        </div>
+        <button class="login-button">Login</button>
+      </div>
+    </header>
+    <main>
+      <div class="categories">
+        <div class="categories-cards" data-categories="men's clothing">
+          <h3 class="categories-header">Men's clothing</h3>
+          <img src="/img/mens-clothing.jpg" alt="men" />
+        </div>
+        <div class="categories-cards" data-categories="women's clothing">
+          <h3 class="categories-header">Women's clothing</h3>
+          <img src="/img/womens-clothing.jpg" alt="woman" />
+        </div>
+        <div class="categories-cards" data-categories="jewelery">
+          <h3 class="categories-header">Jewelery</h3>
+          <img src="/img/jewelery.jpg" alt="jewelery" />
+        </div>
+        <div class="categories-cards" data-categories="electronics">
+          <h3 class="categories-header">Electronics</h3>
+          <img src="/img/electronics.jpg" alt="electronics" />
+        </div>
+      </div>
+      <div id="message"></div>
+      <h2>Catalog</h2>
+      <div id="productList"></div>
+      <button class="download-more">Download more</button>
+      <aside class="addNewProduct">
+        <h2>Add New Product</h2>
+        <form id="addProductForm">
+          <input type="text" id="productTitle" placeholder="Title" required />
+          <input
+            type="number"
+            id="productPrice"
+            placeholder="Price"
+            step="0.01"
+            required
+          />
+          <input
+            type="text"
+            id="productDescription"
+            placeholder="Description"
+            required
+          />
+          <input
+            type="text"
+            id="productImage"
+            placeholder="Image URL"
+            required
+          />
+          <input
+            type="text"
+            id="productCategory"
+            placeholder="Category"
+            required
+          />
+          <button class="addProductBtn" type="submit">Add Product</button>
+        </form>
+      </div>
+    </main>
+    <footer></footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
