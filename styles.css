@@ -107,6 +107,7 @@ form input {
 #categorieslist {
   font-size: 16px;
   padding: 5px;
+  border-color: #ff9743;
 }
 #categorieslist option {
   font-size: 16px;
