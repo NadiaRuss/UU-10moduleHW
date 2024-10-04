@@ -14,10 +14,12 @@ DownloadMoreBtn.addEventListener("click", (event) => {
   getProducts(searchingRequest);
 });
 
-let categories = Array.from(document.querySelectorAll(".categories-cards"));
+let categoriesCards = Array.from(
+  document.querySelectorAll(".categories-cards")
+);
 let productCat = "";
 
-categories.forEach((el) => {
+categoriesCards.forEach((el) => {
   el.addEventListener("click", (event) => {
     event.preventDefault();
     let target = event.target;
@@ -27,6 +29,41 @@ categories.forEach((el) => {
     getProducts(searchingRequest);
   });
 });
+async function getCategories() {
+  try {
+    const response = await fetch(`${storeApi}/products/categories`);
+    if (!response.ok) throw new Error("Network response was not ok");
+    const categories = await response.json();
+    displayCategories(categories);
+  } catch (error) {
+    showMessage("Error fetching categories: " + error.message, "error");
+  }
+}
+getCategories();
+
+function displayCategories(categories) {
+  const categoriesList = document.getElementById("categorieslist");
+  categoriesList.innerHTML = `<option value="select">Please select a category</option>`;
+  categories.forEach((category) => {
+    const categoryOption = document.createElement("option");
+    categoryOption.value = `${category}`;
+    categoryOption.innerHTML = `${category}`;
+    categoriesList.appendChild(categoryOption);
+  });
+}
+document
+  .getElementById("categorieslist")
+  .addEventListener("change", function () {
+    const selectedValue = this.value;
+    if (this.value === "select") {
+      searchingRequest = `?limit=${n}`;
+      getProducts(searchingRequest);
+    } else{
+      searchingRequest = `/category/${selectedValue}`;
+      getProducts(searchingRequest);
+    }
+
+  });
 
 async function getProducts() {
   try {

@@ -7,6 +7,13 @@ a {
   text-decoration: none;
   color: inherit;
 }
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  margin: 0 auto;
+  padding: 20px;
+}
+
 .header {
   display: flex;
   justify-content: space-around;
@@ -60,6 +67,13 @@ a {
 .login-button:hover {
   cursor: pointer;
 }
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+h2 {
+  margin: 50px auto 0;
+}
 .download-more,
 .addProductBtn {
   margin: 20px auto 50px;
@@ -74,7 +88,7 @@ a {
   flex-direction: column;
   gap: 20px;
   position: absolute;
-  top: 193px;
+  top: 250px;
   left: 70px;
 }
 form input {
@@ -82,6 +96,20 @@ form input {
   margin-bottom: 10px;
   font-size: 18px;
   padding: 5px;
+}
+.search-categories {
+  margin: 40px auto;
+}
+.search-categories label {
+  font-size: 18px;
+  font-weight: bold;
+}
+#categorieslist {
+  font-size: 16px;
+  padding: 5px;
+}
+#categorieslist option {
+  font-size: 16px;
 }
 .categories {
   display: inline-flex;
@@ -98,7 +126,6 @@ form input {
 .categories-cards:hover {
   cursor: pointer;
 }
-
 .categories-cards img {
   max-width: 200px;
   max-height: 260px;
@@ -121,18 +148,6 @@ form input {
   color: #ff9743;
   align-self: end;
 }
-/* ______________________________________________________________________________ */
-body {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  /* max-width: 800px; */
-  margin: 0 auto;
-  padding: 20px;
-}
-main {
-  max-width: 800px;
-  margin: 0 auto;
-}
 
 #productList {
   display: grid;
@@ -141,10 +156,6 @@ main {
   justify-items: stretch;
   align-items: stretch;
 }
-h2 {
-  margin: 50px auto 0;
-}
-
 .product {
   display: flex;
   border: 1px solid #ddd;
@@ -154,27 +165,22 @@ h2 {
   align-items: center;
   justify-content: space-around;
 }
-
 .product-img {
   max-width: 200px;
   max-height: 200px;
 }
-
 .addProductForm {
   margin-bottom: 20px;
 }
-
 #message {
   padding: 10px;
   margin: 10px 0;
   display: none;
 }
-
 .success {
   background-color: #d4edda;
   color: #5ca86e;
 }
-
 .error {
   background-color: #f8d7da;
   color: #d14b59;
